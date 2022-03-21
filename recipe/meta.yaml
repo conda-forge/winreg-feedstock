@@ -1,5 +1,5 @@
 {% set name = "winreg" %}
-{% set version = "4.1.2" %}
+{% set version = "5.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/GiovanniDicanio/WinReg/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 191c151604d765d0ad079b684eeacb3252c171392ad7beec593be0cd220dd032
+  sha256: 6c676ba34d6d05d06da01a8638559ad8db035e046150a519f244a4cecbd5e554
 
 build:
   number: 0
   skip: true  # [not win]
-  script: "cp WinReg\\WinReg.hpp %LIBRARY_PREFIX%\\include\\"
+  script: cp WinReg\WinReg.hpp %LIBRARY_PREFIX%\include\
 
 test:
   commands:
