@@ -1,5 +1,5 @@
 {% set name = "winreg" %}
-{% set version = "6.0.0" %}
+{% set version = "6.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GiovanniDicanio/WinReg/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 8133bf745c3dcc017d856cef81fd0a115981972ee9e7da0d4f095335600c9b4b
+  sha256: d4118ccfd4f4edee29e0f6b3706979791ad537278e2f74818c150bb66f8fcc53
 
 build:
   number: 0
