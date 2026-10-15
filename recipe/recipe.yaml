@@ -13,12 +13,19 @@ source:
 build:
   number: 0
   skip: not win
-  script: mkdir %LIBRARY_PREFIX%\include\winreg && cp WinReg\WinReg.hpp %LIBRARY_PREFIX%\include\winreg\
+  script: xcopy "WinReg\Include\WinReg" "%LIBRARY_PREFIX%\include\WinReg" /E /I /Y
 
 tests:
   - package_contents:
       include:
-        - winreg/WinReg.hpp
+        - WinReg/WinReg.hpp
+        - WinReg/RegException.hpp
+        - WinReg/RegExpected.hpp
+        - WinReg/RegKey.hpp
+        - WinReg/RegResult.hpp
+        - WinReg/internal/MultiString.hpp
+        - WinReg/internal/SafeCast.hpp
+        - WinReg/internal/ScopedLocalFree.hpp
 
 about:
   homepage: https://github.com/GiovanniDicanio/WinReg
