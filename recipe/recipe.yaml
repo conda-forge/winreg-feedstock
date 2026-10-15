@@ -1,24 +1,30 @@
 context:
-  name: winreg
-  version: "6.5.1"
+  version: "10.0.0"
 
 package:
-  name: ${{ name|lower }}
+  name: winreg
   version: ${{ version }}
 
 source:
   url: https://github.com/GiovanniDicanio/WinReg/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: a0f1e4d53013a068d271e114cb96014ae302e14d4701d872a405bb7f81acf1ab
+  sha256: a67a5f6307dc78908b74246d4c03722589cd006b1b89164f9b277ba8ed504f93
 
 build:
   number: 0
   skip: not win
-  script: mkdir %LIBRARY_PREFIX%\include\winreg && cp WinReg\WinReg.hpp %LIBRARY_PREFIX%\include\winreg\
+  script: xcopy "WinReg\Include\WinReg" "%LIBRARY_PREFIX%\include\WinReg" /E /I /Y
 
 tests:
   - package_contents:
       include:
-        - winreg/WinReg.hpp
+        - WinReg/WinReg.hpp
+        - WinReg/RegException.hpp
+        - WinReg/RegExpected.hpp
+        - WinReg/RegKey.hpp
+        - WinReg/RegResult.hpp
+        - WinReg/internal/MultiString.hpp
+        - WinReg/internal/SafeCast.hpp
+        - WinReg/internal/ScopedLocalFree.hpp
 
 about:
   homepage: https://github.com/GiovanniDicanio/WinReg
