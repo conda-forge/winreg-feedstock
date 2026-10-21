@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   skip: not win
-  script: xcopy "WinReg\Include\WinReg" "%LIBRARY_PREFIX%\include\WinReg" /E /I /Y
+  script: xcopy "Include\WinReg" "%LIBRARY_PREFIX%\include\WinReg" /E /I /Y
 
 tests:
   - package_contents:
@@ -21,10 +21,13 @@ tests:
         - WinReg/RegException.hpp
         - WinReg/RegExpected.hpp
         - WinReg/RegKey.hpp
+        - WinReg/RegKey_impl.hpp
         - WinReg/RegResult.hpp
-        - WinReg/internal/MultiString.hpp
-        - WinReg/internal/SafeCast.hpp
-        - WinReg/internal/ScopedLocalFree.hpp
+        - WinReg/detail/Config.hpp
+        - WinReg/detail/ExpandStrings.hpp
+        - WinReg/detail/MultiString.hpp
+        - WinReg/detail/SafeCast.hpp
+        - WinReg/detail/ScopedLocalFree.hpp
 
 about:
   homepage: https://github.com/GiovanniDicanio/WinReg
