@@ -1,5 +1,5 @@
 context:
-  version: "14.1.1"
+  version: "15.0.0"
 
 package:
   name: winreg
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GiovanniDicanio/WinReg/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 9bedda904f4bb3274cc5f547e57f8d24ec1ceec81006276c5be157a8adefa94b
+  sha256: a663fab1e3066e7cc01b4ea9240f5b3a7e5859e35efa89c989c395f704bf2b92
 
 build:
   number: 0
